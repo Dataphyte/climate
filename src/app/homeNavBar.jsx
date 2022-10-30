@@ -9,16 +9,16 @@ const HomeNavBar = () => {
 
       {/* ======= MENU ITEMS */}
       <span className='hidden lg:flex items-center mx-5 gap-5 text-white font-regular '>
-        <Link href='#' className='home-nav-links'>
+        <Link href='flood' className='home-nav-links'>
           Water/Flood
         </Link>
-        <Link href='#' className='home-nav-links'>
+        <Link href='/' className='home-nav-links'>
           Forestry
         </Link>
-        <Link href='#' className='home-nav-links'>
+        <Link href='/' className='home-nav-links'>
           Energy
         </Link>
-        <Link href='#' className='home-nav-links'>
+        <Link href='/' className='home-nav-links'>
           Agriculture
         </Link>
       </span>
