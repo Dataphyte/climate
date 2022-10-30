@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import HomeNavBar from './homeNavBar';
+import WiredIcon from '../components/lib/wiredIcon';
 import { topography } from '../assets/svg/topography.js';
 
 const HomeHero = () => {
@@ -58,7 +59,7 @@ const HomeHero = () => {
             href='#'
             className='bg-white w-max px-8 py-3 rounded-lg shadow-xl text-main-color font-medium cursor-pointer'
           >
-            View categories
+            Dashboard sandbox
           </Link>
         </div>
 
@@ -75,15 +76,42 @@ const HomeHero = () => {
             initial='hidden'
             animate='enter'
             exit='exit'
-            transition={{ type: 'spring', stiffness: 500, damping: 18 }}
-            className='flex w-full h-max items-center justify-between gap-4 shrink-0'
+            transition={{
+              type: 'spring',
+              stiffness: 500,
+              damping: 18,
+              delay: 0.5,
+            }}
+            className='flex w-full h-max items-center justify-between gap-4 shrink-0 '
             style={{
               transform:
                 'rotateY(-43deg) rotateX(20deg) translateZ(120px) translateY(50px)',
             }}
           >
-            <div className='w-1/2 h-32 bg-white rounded-lg shadow-xl lg:h-24 ' />
-            <div className='w-1/2 h-32  bg-white rounded-lg shadow-xl lg:h-24 ' />
+            <div className='w-1/2 h-32 bg-white rounded-lg shadow-xl lg:h-24 flex flex-col items-end px-3 py-2 relative'>
+              <WiredIcon
+                src='https://cdn.lordicon.com/gqdnbnwt.json'
+                dimension={[50, 50]}
+                trigger='loop'
+                pointer
+                sx={{ zIndex: 20, position: 'absolute', left: 12, top: 5 }}
+                colors={['#3955CB', '#000000']}
+              />
+              <p className='text-5xl font-bold text-main-color'>12</p>
+              <p className='text-xl font-medium'>Flood - Affected states</p>
+            </div>
+            <div className='w-1/2 h-32 bg-white rounded-lg shadow-xl lg:h-24 flex flex-col items-end px-3 py-2 relative'>
+              <WiredIcon
+                src='https://cdn.lordicon.com/imamsnbq.json'
+                dimension={[50, 50]}
+                trigger='loop'
+                pointer
+                sx={{ zIndex: 20, position: 'absolute', left: 12, top: 5 }}
+                colors={['#3955CB', '#000000']}
+              />
+              <p className='text-5xl font-bold text-main-color'>1.4m</p>
+              <p className='text-xl font-medium'>Flood - People displaced</p>
+            </div>
           </motion.div>
 
           <motion.div
@@ -91,10 +119,19 @@ const HomeHero = () => {
             initial='hidden'
             animate='enter'
             exit='exit'
-            transition={{ type: 'linear' }}
-            className='w-full  rounded-xl shadow-2xl shrink-0 bg-white lg:h-[410px] origin-left border'
+            transition={{ type: 'linear', delay: 0.3 }}
+            className='w-full  rounded-xl shadow-2xl shrink-0 bg-white lg:h-[410px] origin-left border flex items-center justify-center p-3'
             style={{ transform: 'rotateY(-43deg) rotateX(15deg)' }}
-          />
+          >
+            <iframe
+              src='https://flo.uri.sh/visualisation/11296696/embed'
+              title='Interactive or visual content'
+              class='flourish-embed-iframe'
+              frameborder='0'
+              style={{ width: '100%', height: '100%' }}
+              sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
+            ></iframe>
+          </motion.div>
         </div>
 
         {/* ======= MOBILE CHART AREA */}
@@ -102,8 +139,17 @@ const HomeHero = () => {
           initial={{ opacity: 0, y: 150 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 500, damping: 18 }}
-          className='flex lg:hidden w-full rounded-xl shadow-xl h-[500px] bg-white z-10 shrink-0'
-        ></motion.div>
+          className='flex lg:hidden w-full rounded-xl shadow-xl h-[500px] bg-white z-10 shrink-0 items-center justify-center p-3'
+        >
+          <iframe
+            src='https://flo.uri.sh/visualisation/11296696/embed'
+            title='Interactive or visual content'
+            class='flourish-embed-iframe'
+            frameborder='0'
+            style={{ width: '100%', height: '100%' }}
+            sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
+          ></iframe>
+        </motion.div>
       </section>
     </header>
   );
