@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import HomeNavBar from './homeNavBar';
+import HomeNavBar from './homeNavBar.client';
 import WiredIcon from '../components/lib/wiredIcon';
 import { topography } from '../assets/svg/topography.js';
 
