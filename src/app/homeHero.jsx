@@ -46,7 +46,7 @@ const HomeHero = () => {
         {/* ======= CONTENT */}
         <section className='w-full h-full lg:items-center lg:justify-center gap-10 flex flex-col lg:flex-row z-10'>
           {/* ======= TEXT AREA */}
-          <div className='w-full h-2/3 lg:w-1/2 flex flex-col  px-10 min-h-[400px] xl:px-44 shrink-0 justify-center gap-10 z-10'>
+          <div className='w-full h-2/3 lg:w-1/2 flex flex-col  px-10 min-h-[400px] xl:px-24 shrink-0 justify-center gap-10 z-10'>
             <h1 className='text-white/80 text-6xl lg:text-5xl'>
               Climate change <br />
               <b className='text-white text-8xl lg:text-7xl font-bold'>

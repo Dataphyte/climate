@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       colors: {
         'main-color': '#3955CB',
+        'bg-grad-1': '#1449d9',
+        'bg-grad-2': '#38bdee',
         'light-color': '#FCFDFE',
       },
       clipPath: {
