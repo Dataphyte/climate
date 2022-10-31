@@ -92,8 +92,8 @@ const HomeHero = () => {
                 <p className='text-xl font-medium'>Flood - Affected states</p>
               </div>
               <div className='w-1/2 h-32 bg-white rounded-lg shadow-xl lg:h-24 flex flex-col items-end px-3 py-2 relative'>
-                <p className='text-5xl font-bold text-main-color'>1.4m</p>
-                <p className='text-xl font-medium'>Flood - People displaced</p>
+                <p className='text-5xl font-bold text-main-color'>2.8m</p>
+                <p className='text-xl font-medium'>People affected</p>
               </div>
             </motion.div>
 

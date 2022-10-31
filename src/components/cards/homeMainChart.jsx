@@ -7,7 +7,7 @@ const cardData = [
   { value: '₦1,000,000', content: 'Us support supplies' },
   { value: '₦5,000,000', content: 'Worth of Utilities from FG' },
   { value: '1.4m', content: 'Houses damaged by flood' },
-  { value: 300, content: 'Random content' },
+  { value: '7,750', content: 'Cases reported as at August & September' },
 ];
 
 const HomeMainChart = () => {
