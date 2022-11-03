@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/** FONTS: ROBOTO SERIF & ROBOTO */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100;0,8..144,200;0,8..144,300;0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,800;0,8..144,900;1,8..144,100;1,8..144,200;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,800;1,8..144,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @layer base {
   html,
   body {
-    @apply w-full h-full;
+    @apply w-full h-full font-main;
   }
 
   * {
@@ -14,7 +17,13 @@
 }
 
 @layer components {
+  /** NavBar Components*/
+
   .home-nav-links {
-    @apply text-lg text-white/80 transition-all duration-300 hover:text-white relative ease-out after:absolute after:opacity-0 flex items-center justify-center after:pointer-events-none after:bg-white after:w-1 after:h-1 after:rounded-full after:-bottom-0 hover:after:translate-y-1 hover:after:opacity-100 hover:after:duration-300;
+    @apply text-white/70 transition-all duration-300 hover:text-white relative ease-out after:absolute after:opacity-0 flex items-center justify-center after:pointer-events-none after:bg-white after:w-1 after:h-1 after:rounded-full after:-bottom-0 hover:after:translate-y-1 hover:after:opacity-100 hover:after:duration-300;
+  }
+
+  .home-nav-btn {
+    @apply hidden text-sm lg:flex items-center gap-2 text-gray-200 duration-300 ease-out border rounded-md py-1.5 px-6  justify-center border-gray-200 hover:shadow-lg hover:border-white hover:text-white;
   }
 }
