@@ -1,5 +1,6 @@
 'use client';
 
+import 'swiper/css';
 import React from 'react';
 import '../styles/globals.css';
 import { motion } from 'framer-motion';

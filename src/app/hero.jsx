@@ -37,7 +37,7 @@ const HomeHero = () => {
         className='top-0 left-0'
       />
 
-      <div className='flex w-full h-full flex-col lg:flex-row'>
+      <div className='flex w-full h-full flex-col lg:flex-row items-center px-2 md:px-6 lg:px-0'>
         {/* ======= CONTENT SECTION */}
         <div className=' w-full flex flex-col gap-6 justify-center py-16 shrink-0 z-10 lg:w-2/5 lg:-mt-20'>
           <h1 className='text-gray-200 text-bold text-3xl'>
@@ -45,7 +45,7 @@ const HomeHero = () => {
             <b className='text-bold text-6xl text-white'>Data-Centre</b>
           </h1>
           <Link
-            href='/'
+            href='map-sandbox'
             className='py-2 px-6 text-main-color rounded-md shadow-lg bg-gray-100 w-max'
           >
             View sandbox
@@ -53,7 +53,7 @@ const HomeHero = () => {
         </div>
 
         {/* ======= DATA SECTION */}
-        <div className='w-full grid grid-cols-4 grid-rows-5 h-[400px] rounded-md shadow-2xl shrink-0 gap-2 z-10 lg:w-3/5 max-w-[600px] lg:mt-34 lg:ml-24 lg:h-[400px]'>
+        <div className='w-full grid grid-cols-4 grid-rows-5 h-[400px] rounded-md shadow-2xl shrink-0 gap-2 z-10 lg:w-3/5 max-w-[600px] lg:mt-34 lg:ml-01 xl:ml-24 lg:h-[400px]'>
           {cardData.map((item, idx) => (
             <motion.div
               variants={cardVariants}
@@ -85,7 +85,7 @@ const HomeHero = () => {
               damping: 30,
               stiffness: 500,
             }}
-            className='col-span-4 row-span-3 shadow-lg rounded-lg bg-white overflow-hidden p-2 lg:h-[400px]'
+            className='col-span-4 row-span-3 shadow-lg rounded-lg bg-white overflow-hidden p-2 lg:h-[400px] h-[300px]'
           >
             <iframe
               src='https://flo.uri.sh/visualisation/11296696/embed'
@@ -94,6 +94,7 @@ const HomeHero = () => {
               style={{ width: '100%', height: '100%' }}
               sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
             ></iframe>
+            ;
           </motion.div>
         </div>
       </div>
