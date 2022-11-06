@@ -28,8 +28,7 @@ const chartVariants = {
 
 const HomeHero = () => {
   return (
-    <header className='w-full flex flex-col items-center h-[60vh] shadow-2xl px-3 lg:px-24 bg-gradient-to-br from-bg-grad-1 to-bg-grad-2 xl:px-44 min-h-[600px] gap-2 relative'>
-      <HomeNavBar />
+    <header className='w-full flex flex-col items-center h-[55vh] shadow-xl px-3 lg:px-24 bg-gradient-to-br from-bg-grad-1 to-bg-grad-2 xl:px-44 min-h-[400px] gap-2 relative'>
       <Image
         src={topography}
         alt='hero-bg-image'
@@ -37,6 +36,7 @@ const HomeHero = () => {
         className='top-0 left-0'
       />
 
+      <HomeNavBar />
       <div className='flex w-full h-full flex-col lg:flex-row items-center px-2 md:px-6 lg:px-0'>
         {/* ======= CONTENT SECTION */}
         <div className=' w-full flex flex-col gap-6 justify-center py-16 shrink-0 z-10 lg:w-2/5 lg:-mt-20'>
@@ -53,7 +53,7 @@ const HomeHero = () => {
         </div>
 
         {/* ======= DATA SECTION */}
-        <div className='w-full grid grid-cols-4 grid-rows-5 h-[400px] rounded-md shadow-2xl shrink-0 gap-2 z-10 lg:w-3/5 max-w-[600px] lg:mt-34 lg:ml-01 xl:ml-24 lg:h-[400px]'>
+        <div className='w-full grid grid-cols-4 lg:grid-rows-5 h-max rounded-md lg:shadow-2xl shrink-0 gap-2 z-10 lg:w-3/5 max-w-[600px] lg:ml-01 xl:ml-24 lg:h-[300px]'>
           {cardData.map((item, idx) => (
             <motion.div
               variants={cardVariants}
@@ -67,10 +67,10 @@ const HomeHero = () => {
                 delay: idx * 0.2,
               }}
               key={idx}
-              className='flex flex-col py-2 px-3 row-span-1 col-span-2 bg-white shadow-lg rounded-md'
+              className='flex flex-col py-1 px-5 row-span-1 col-span-2 bg-white justify-items-center rounded-md shadow-lg'
             >
-              <p className='font-black text-bg-grad-1 text-2xl'>{item.value}</p>
-              <p className='text-gray-700 font-secondary'>{item.desc}</p>
+              <p className='font-black text-bg-grad-1 text-xl'>{item.value}</p>
+              <p className='text-gray-800 text-sm'>{item.desc}</p>
             </motion.div>
           ))}
 
@@ -85,12 +85,11 @@ const HomeHero = () => {
               damping: 30,
               stiffness: 500,
             }}
-            className='col-span-4 row-span-3 shadow-lg rounded-lg bg-white overflow-hidden p-2 lg:h-[400px] h-[300px]'
+            className='col-span-4 row-span-3 shadow-lg rounded-lg bg-white overflow-hidden p-2 lg:h-[350px] h-[300px] hidden lg:block'
           >
             <iframe
-              src='https://flo.uri.sh/visualisation/11296696/embed'
+              src='https://flo.uri.sh/visualisation/11715093/embed'
               title='Interactive or visual content'
-              class='flourish-embed-iframe'
               style={{ width: '100%', height: '100%' }}
               sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
             ></iframe>

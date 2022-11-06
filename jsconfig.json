@@ -6,7 +6,9 @@
       "@/icons/*": ["./src/assets/icons/*"],
       "@/images/*": ["./src//assets/images//*"],
       "@/svg/*": ["./src/assets/svg/*"],
-      "@/helpers/*": ["./src/helpers/*"]
+      "@/animations/*": ["./src/assets/animations/*"],
+      "@/helpers/*": ["./src/helpers/*"],
+      "@/hooks/*": ["./src/hooks/*"]
     }
   }
 }

@@ -1,17 +1,141 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import HomeHero from './hero';
 import HomeSwiper from '@/components/HomeSwiper';
+
+const cardData = [
+  {
+    title: 'This is a title',
+    tag: 'This is a tag',
+    content: 'This is the contenty',
+    icon: 'icon',
+  },
+  {
+    title: 'This is a title',
+    tag: 'This is a tag',
+    content: 'This is the contenty',
+    icon: 'icon',
+  },
+  {
+    title: 'This is a title',
+    tag: 'This is a tag',
+    content: 'This is the contenty',
+    icon: 'icon',
+  },
+  {
+    title: 'This is a title',
+    tag: 'This is a tag',
+    content: 'This is the contenty',
+    icon: 'icon',
+  },
+  {
+    title: 'This is a title',
+    tag: 'This is a tag',
+    content: 'This is the contenty',
+    icon: 'icon',
+  },
+  {
+    title: 'This is a title',
+    tag: 'This is a tag',
+    content: 'This is the contenty',
+    icon: 'icon',
+  },
+  {
+    title: 'This is a title',
+    tag: 'This is a tag',
+    content: 'This is the contenty',
+    icon: 'icon',
+  },
+  {
+    title: 'This is a title',
+    tag: 'This is a tag',
+    content: 'This is the contenty',
+    icon: 'icon',
+  },
+];
 
 const Page = () => {
   return (
     <div className='w-full min-h-screen flex gap-5 items-center flex-col bg-gray-100'>
       <HomeHero />
 
+      {/* ======= ############ */}
+      {/* ======= ############ */}
       {/* ======= BOTTOM SECTION */}
-      <section className='w-full  min-h-[500px]  mt-64 lg:mt-0 px-3'>
+      <section className='w-full min-h-[600px] mt-20 lg:mt-16 lg:px-20 xl:px-32 px-3 gap-5 flex flex-col'>
         <h3 className='font-bold text-3xl text-gray-700'>Quick Charts</h3>
-        <div>
+        <div className='grid grid-cols-5'>
           <HomeSwiper />
+        </div>
+      </section>
+
+      {/* ======= ############ */}
+      {/* ======= ############ */}
+      {/* ======= MAIN CHART SECTION */}
+      <section className='bg-dark-2 w-full min-h-[600px] h-max grid grid-cols-3 gap-3 gap-y-10 px-3 lg:px-24 py-10 lg:py-20'>
+        <h1 className='font-bold text-2xl lg:text-5xl col-span-3 text-gray-200 mb-10 border-l-2 w-max px-3 lg:px-10 rounded-md'>
+          Climate <b className='text-white'>DATA</b> rundown
+        </h1>
+        {/* ======= CHART 1 */}
+        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max '>
+          <iframe
+            src='https://flo.uri.sh/visualisation/11715161/embed'
+            title='Interactive or visual content'
+            style={{ height: '300px', width: '100%' }}
+            sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
+          ></iframe>
+        </div>
+
+        {/* ======= CHART 2 */}
+        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max '>
+          <iframe
+            src='https://flo.uri.sh/visualisation/11714968/embed'
+            title='Interactive or visual content'
+            style={{ height: '300px', width: '100%' }}
+            sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
+          ></iframe>
+        </div>
+
+        {/* ======= CHART 3 */}
+        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max '>
+          <iframe
+            src='https://flo.uri.sh/visualisation/11715189/embed'
+            title='Interactive or visual content'
+            style={{ height: '300px', width: '100%' }}
+            sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
+          ></iframe>
+        </div>
+
+        {/* ======= INFO CARDS */}
+        <div className='w-full col-span-3  h-full flex items-center justify-start py-3 px-2 lg:px-8 gap-5 overflow-hidden'>
+          {cardData.map((item, idx) => (
+            <span
+              key={idx}
+              className='w-[250px] bg-white border h-[120px] rounded-xl shadow-lg shrink-0 gap-3 animate-chart-slider-sm lg:animate-chart-slider-lg ease-out select-none hover:scale-110 flex items-center justify-center'
+            >
+              {idx}
+            </span>
+          ))}
+        </div>
+
+        {/* ======= BOTTOM THIRD ROW CHARTS */}
+        <div className='col-span-3 lg:col-span-2 bg-white p-3 rounded-md shadow-md h-max '>
+          <iframe
+            src='https://flo.uri.sh/visualisation/11681640/embed'
+            title='Interactive or visual content'
+            style={{ height: '300px', width: '100%' }}
+            sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
+          ></iframe>
+        </div>
+
+        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max '>
+          <iframe
+            src='https://flo.uri.sh/visualisation/11715093/embed'
+            title='Interactive or visual content'
+            style={{ height: '300px', width: '100%' }}
+            sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
+          ></iframe>
         </div>
       </section>
     </div>
@@ -23,6 +147,6 @@ export default Page;
 // trend of nigerias rainfaLL
 // nigerias GHG emissions
 // Key natural hazard statistics
-// A place for resouirces
+// A place for resources
 
 // change as of today tp 2022 flood in nigeria by data

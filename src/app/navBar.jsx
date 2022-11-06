@@ -6,9 +6,10 @@ import React, { useState } from 'react';
 import { classNames } from '@/helpers/classNames';
 
 const navLinks = [
+  { route: '/', label: 'Home' },
   { route: 'map-sandbox', label: 'Map Sandbox' },
   { route: '/', label: 'Resources' },
-  { route: '/', label: 'Data' },
+  { route: 'data', label: 'Data' },
   { route: '/', label: 'Reports' },
 ];
 
@@ -18,7 +19,9 @@ const HomeNavBar = () => {
   return (
     <nav className='w-full h-16 shrink-0 lg:h-24 flex py-2 items-center justify-between z-50 relative'>
       {/* ======= LOGO TEXT */}
-      <p className='text-white font-bold text-lg tracking-wide'>DATAPHYTE</p>
+      <Link href='/'>
+        <p className='text-white font-bold text-lg tracking-wide'>DATAPHYTE</p>
+      </Link>
 
       {/* ======= MENU ITEMS */}
       <span className='hidden lg:flex items-center mx-5 gap-6 text-white font-regular '>
@@ -31,7 +34,7 @@ const HomeNavBar = () => {
 
       {/* ======= NAV CALL TO ACTION  */}
       <Link href='/' className='home-nav-btn'>
-        Explore
+        Home
       </Link>
 
       {/* ======= MOBILE BUTTONS */}
@@ -64,7 +67,7 @@ const HomeNavBar = () => {
           href='/'
           className=' w-full border rounded-md shadow-lg flex items-center justify-center py-2 px-6 mt-5 bg-main-color text-white'
         >
-          Explore
+          Home
         </Link>
       </span>
     </nav>

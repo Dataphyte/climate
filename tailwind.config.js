@@ -12,6 +12,23 @@ module.exports = {
         'bg-grad-1': '#1449d9',
         'bg-grad-2': '#38bdee',
         'light-color': '#FCFDFE',
+        'dark-2': '#111827',
+      },
+
+      animation: {
+        'chart-slider-lg': 'chart-slider-lg 40s ease-out infinite',
+        'chart-slider-sm': 'chart-slider-sm 40s ease-out infinite',
+      },
+
+      keyframes: {
+        'chart-slider-lg': {
+          '0%, 100%': { transform: 'translateX(0) ' },
+          '50%': { transform: ' translateX(-1000px) ' },
+        },
+        'chart-slider-sm': {
+          '0%, 100%': { transform: 'translateX(0) ' },
+          '50%': { transform: ' translateX(-1800px) ' },
+        },
       },
 
       fontFamily: {

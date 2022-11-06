@@ -1,6 +1,8 @@
 'use client';
 
 import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/free-mode';
 import React from 'react';
 import '../styles/globals.css';
 import { motion } from 'framer-motion';
