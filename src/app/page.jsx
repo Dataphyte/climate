@@ -1,57 +1,64 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import HomeHero from './hero';
 import HomeSwiper from '@/components/HomeSwiper';
+import { classNames } from '@/helpers/classNames';
 
 const cardData = [
   {
     title: 'This is a title',
     tag: 'This is a tag',
-    content: 'This is the contenty',
+    value: '2.5m',
     icon: 'icon',
+    bad: true,
   },
   {
     title: 'This is a title',
     tag: 'This is a tag',
-    content: 'This is the contenty',
+    value: '$1m',
     icon: 'icon',
+    bad: false,
   },
   {
     title: 'This is a title',
     tag: 'This is a tag',
-    content: 'This is the contenty',
+    value: '7,500',
     icon: 'icon',
+    bad: true,
   },
   {
     title: 'This is a title',
     tag: 'This is a tag',
-    content: 'This is the contenty',
+    value: '7,500',
     icon: 'icon',
+    bad: true,
   },
   {
     title: 'This is a title',
     tag: 'This is a tag',
-    content: 'This is the contenty',
+    value: '7,500',
     icon: 'icon',
+    bad: false,
   },
   {
     title: 'This is a title',
     tag: 'This is a tag',
-    content: 'This is the contenty',
+    value: '7,500',
     icon: 'icon',
+    bad: true,
   },
   {
     title: 'This is a title',
     tag: 'This is a tag',
-    content: 'This is the contenty',
+    value: '7,500',
     icon: 'icon',
+    bad: false,
   },
   {
     title: 'This is a title',
     tag: 'This is a tag',
-    content: 'This is the contenty',
+    value: '7,500',
     icon: 'icon',
+    bad: false,
   },
 ];
 
@@ -75,7 +82,7 @@ const Page = () => {
       {/* ======= MAIN CHART SECTION */}
       <section className='bg-dark-2 w-full min-h-[600px] h-max grid grid-cols-3 gap-3 gap-y-10 px-3 lg:px-24 py-10 lg:py-20'>
         <h1 className='font-bold text-2xl lg:text-5xl col-span-3 text-gray-200 mb-10 border-l-2 w-max px-3 lg:px-10 rounded-md'>
-          Climate <b className='text-white'>DATA</b> rundown
+          Climate <b className='text-white'>TRENDS</b> rundown
         </h1>
         {/* ======= CHART 1 */}
         <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max '>
@@ -108,13 +115,25 @@ const Page = () => {
         </div>
 
         {/* ======= INFO CARDS */}
+        <h3 className='col-span-3 text-2xl lg:text-4xl text-gray-50 font-bold mt-14'>
+          Flood data as of today
+        </h3>
         <div className='w-full col-span-3  h-full flex items-center justify-start py-3 px-2 lg:px-8 gap-5 overflow-hidden'>
           {cardData.map((item, idx) => (
             <span
               key={idx}
-              className='w-[250px] bg-white border h-[120px] rounded-xl shadow-lg shrink-0 gap-3 animate-chart-slider-sm lg:animate-chart-slider-lg ease-out select-none hover:scale-110 flex items-center justify-center'
+              className='w-[250px] bg-white/20 border border-white/30 h-[120px] py-2 px-5 rounded-lg shadow-lg shrink-0 gap-1 animate-chart-slider-sm lg:animate-chart-slider-lg ease-out select-none flex justify-center flex-col'
             >
-              {idx}
+              <p className=' font-bold text-gray-50'>{item.title}</p>
+              <p className='text-sm font-light text-gray-100/70'>{item.tag}</p>
+              <p
+                className={classNames(
+                  'text-2xl font-black',
+                  item.bad ? 'text-red-400' : 'text-bg-grad-2'
+                )}
+              >
+                {item.value}
+              </p>
             </span>
           ))}
         </div>
