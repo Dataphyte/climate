@@ -53,10 +53,10 @@ const Page = () => {
               'Projects assigned by FG': (
                 <div className='table__container'>
                   <iframe
-                    title='Flood Control and Climate Change Mitigation Projects by FG'
+                    title='Flood Control and Climate Change Mitigation Projects by FG and State Governments'
                     aria-label='Table'
-                    id='datawrapper-chart-ByPYV'
-                    src='https://datawrapper.dwcdn.net/ByPYV/1/'
+                    id='datawrapper-chart-gFreb'
+                    src='https://datawrapper.dwcdn.net/gFreb/1/'
                     style={{ height: '100%', width: '100%' }}
                     data-external='1'
                   ></iframe>

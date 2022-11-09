@@ -23,28 +23,32 @@ const Layout = ({ children }) => {
         {/* ======= CLOSE BUTTON */}
         <button
           onClick={() => setOpenSide((state) => !state)}
-          className='text-gray-50 absolute right-2 top-3 py-1 px-4 rounded shadow border border-gray-50 text-sm font-light'
+          className='text-gray-50 absolute right-2 top-3 py-1 px-5 rounded shadow border border-gray-50 text-sm font-light'
         >
           Close
         </button>
 
         <h1>Hint</h1>
 
-        <p>
-          The menu directly beside the map shows the available data that could
-          be layered on the map.
-        </p>
-        <p>
-          Once a dataset is selcted, it is shown on the map with different
-          icons.
-        </p>
-        <p>
-          Multiple datasets can be layered over each other at one time but due
-          to heavy computational requirement, if your device does not have a lot
-          of computational power, it is adviceable to be concious of the number
-          of datasets layered simultaneously as your broswer could freeze or
-          potentially crash due to heavy workloads.
-        </p>
+        <ul className='list-disc'>
+          <li>
+            The menu directly beside the map shows the available data that could
+            be layered on the map.
+          </li>
+
+          <li>
+            Once a dataset is selcted, it is shown on the map with different
+            icons.
+          </li>
+
+          <li>
+            Multiple datasets can be layered over each other at one time but due
+            to heavy computational requirement, if your device does not have a
+            lot of computational power, it is adviceable to be concious of the
+            number of datasets layered simultaneously as your broswer could
+            freeze or potentially crash due to heavy workloads.
+          </li>
+        </ul>
 
         <Link
           href='/'

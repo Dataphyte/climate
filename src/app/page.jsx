@@ -116,9 +116,9 @@ const Page = () => {
 
         {/* ======= INFO CARDS */}
         <h3 className='col-span-3 text-2xl lg:text-4xl text-gray-50 font-bold mt-14'>
-          Flood data as of today
+          Flood data as of November, 2022
         </h3>
-        <div className='w-full col-span-3  h-full flex items-center justify-start py-3 px-2 lg:px-8 gap-5 overflow-hidden'>
+        <div className='w-full col-span-3  h-full min-h-[100px] flex items-center justify-start py-3 px-2 lg:px-8 gap-5 overflow-hidden'>
           {cardData.map((item, idx) => (
             <span
               key={idx}
