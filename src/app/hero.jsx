@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import HomeNavBar from './navBar';
+import HomeNavBar from '../components/navBar';
 import { motion } from 'framer-motion';
 import { topography } from '@/svg/topography';
 

@@ -1,7 +1,7 @@
 'use client';
 
+import Hero from '@/components/hero';
 import React, { useState } from 'react';
-import Hero from './hero';
 import { classNames } from '@/helpers/classNames';
 
 const tableData = [
@@ -14,7 +14,17 @@ const Page = () => {
 
   return (
     <div className='flex flex-col items-center w-full  pb-20'>
-      <Hero />
+      <Hero
+        content={
+          <>
+            Get all the &nbsp;
+            <b className='font-black text-white'>DATA</b> <br />
+            you <b className='text-white font-black'>NEED</b>
+          </>
+        }
+        cta='Visit Data store'
+        ctaLink='https://dataplex.dataphyte.com/'
+      />
       <main className='w-full h-[400px] px-3 md:px-10 lg:px-32 py-10'>
         {/* ======= TABLES SECTIONJ */}
         <section className='w-full flex flex-col gap-10 '>

@@ -8,9 +8,9 @@ import { classNames } from '@/helpers/classNames';
 const navLinks = [
   { route: '/', label: 'Home' },
   { route: 'map-sandbox', label: 'Map Sandbox' },
-  { route: '/', label: 'Resources' },
+  { route: 'resources', label: 'Resources' },
   { route: 'data', label: 'Data' },
-  { route: '/', label: 'Reports' },
+  { route: 'reports', label: 'Reports' },
 ];
 
 const HomeNavBar = () => {
