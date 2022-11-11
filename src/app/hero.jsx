@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 import { topography } from '@/svg/topography';
 
 const cardData = [
-  { value: '3.2m', desc: 'Flood Victims', icon: 1 },
-  { value: '7,224', desc: 'Houses destroyed', icon: 1 },
-  { value: '3.2m', desc: 'Flood Victims', icon: 1 },
-  { value: '3.2m', desc: 'Flood Victims', icon: 1 },
+  { value: '₦2.8B', desc: 'Drainage project budget', icon: 1 },
+  { value: '₦3,349B', desc: 'Erosion project budget', icon: 1 },
+  { value: '304,407+', desc: 'Flood affected houses', icon: 1 },
+  { value: '4,651,138', desc: 'Flood victims', icon: 1 },
 ];
 
 const cardVariants = {
