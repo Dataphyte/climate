@@ -3,7 +3,7 @@
 import Lottie from 'react-lottie';
 import MenuIcon from '@/icons/Menu';
 import React, { useState } from 'react';
-import { classNames } from '@/helpers/classNames';
+import { classNames } from '@/utils/classNames';
 import ScreenLottie from '@/animations/screen-lottie.json';
 import Link from 'next/link';
 

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import MenuIcon from '@/icons/Menu';
 import React, { useState } from 'react';
-import { classNames } from '@/helpers/classNames';
+import { classNames } from '@/utils/classNames';
 
 const navLinks = [
   { route: '/', label: 'Home' },

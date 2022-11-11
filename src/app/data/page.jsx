@@ -2,7 +2,7 @@
 
 import Hero from '@/components/hero';
 import React, { useState } from 'react';
-import { classNames } from '@/helpers/classNames';
+import { classNames } from '@/utils/classNames';
 
 const tableData = [
   { title: 'NIMEC data' },

@@ -7,7 +7,7 @@
       "@/images/*": ["./src//assets/images//*"],
       "@/svg/*": ["./src/assets/svg/*"],
       "@/animations/*": ["./src/assets/animations/*"],
-      "@/helpers/*": ["./src/helpers/*"],
+      "@/utils/*": ["src/utils/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/app/*": ["./src/app/*"]
     }

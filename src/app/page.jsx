@@ -1,62 +1,62 @@
 import React from 'react';
 import HomeHero from './hero';
 import HomeSwiper from '@/components/HomeSwiper';
-import { classNames } from '@/helpers/classNames';
+import { classNames } from '@/utils/classNames';
 
 const cardData = [
   {
-    title: 'This is a title',
-    tag: 'This is a tag',
-    value: '2.5m',
+    title: 'Flood effects',
+    tag: 'Persons affected by flood',
+    value: '3,219,780',
     icon: 'icon',
     bad: true,
   },
   {
-    title: 'This is a title',
-    tag: 'This is a tag',
-    value: '$1m',
+    title: 'Flood Displacements',
+    tag: 'Internally displaced persons',
+    value: '1,427,370',
+    icon: 'icon',
+    bad: true,
+  },
+  {
+    title: 'Flood Injuries',
+    tag: 'Number of persons injured',
+    value: '2,776',
+    icon: 'icon',
+    bad: true,
+  },
+  {
+    title: 'Flood Deaths',
+    tag: 'Number of lives lost to flood',
+    value: '612',
+    icon: 'icon',
+    bad: true,
+  },
+  {
+    title: 'Flood Damages',
+    tag: 'Houses partially damaged',
+    value: '181,600',
     icon: 'icon',
     bad: false,
   },
   {
-    title: 'This is a title',
-    tag: 'This is a tag',
-    value: '7,500',
+    title: 'Flood Damage',
+    tag: 'Houses totally damaged',
+    value: '123,807',
     icon: 'icon',
     bad: true,
   },
   {
-    title: 'This is a title',
-    tag: 'This is a tag',
-    value: '7,500',
-    icon: 'icon',
-    bad: true,
-  },
-  {
-    title: 'This is a title',
-    tag: 'This is a tag',
-    value: '7,500',
+    title: 'Agricultural Damage',
+    tag: 'Hectares of farmlands partially damaged',
+    value: '176,852',
     icon: 'icon',
     bad: false,
   },
   {
-    title: 'This is a title',
-    tag: 'This is a tag',
-    value: '7,500',
-    icon: 'icon',
-    bad: true,
-  },
-  {
-    title: 'This is a title',
-    tag: 'This is a tag',
-    value: '7,500',
-    icon: 'icon',
-    bad: false,
-  },
-  {
-    title: 'This is a title',
-    tag: 'This is a tag',
-    value: '7,500',
+    title: 'Agricultural Damage',
+    tag: 'Hectares of farmlands totally damaged',
+    value: '392,399',
     icon: 'icon',
     bad: false,
   },
@@ -118,7 +118,7 @@ const Page = () => {
         <h3 className='col-span-3 text-2xl lg:text-4xl text-gray-50 font-bold mt-14'>
           Flood data as of November, 2022
         </h3>
-        <div className='w-full col-span-3  h-full min-h-[100px] flex items-center justify-start py-3 px-2 lg:px-8 gap-5 overflow-hidden'>
+        <div className='w-full col-span-3  h-full min-h-[150px] flex items-center justify-start py-3 px-2 lg:px-8 gap-5 overflow-hidden'>
           {cardData.map((item, idx) => (
             <span
               key={idx}
