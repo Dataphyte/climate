@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import HomeHero from './hero';
 import HomeSwiper from '@/components/HomeSwiper';
 import { classNames } from '@/utils/classNames';
@@ -69,7 +69,9 @@ const cardData = [
 const Page = () => {
   const telemetrics = useTelemetrics();
 
-  console.log(telemetrics);
+  useEffect(() => {
+    console.log(telemetrics);
+  }, [telemetrics]);
 
   return (
     <div className='w-full min-h-screen flex gap-5 items-center flex-col bg-gray-100'>
