@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <title>CLIMATE-DATA | HOME</title>
       </head>
 
-      <body className='h-full w-full m-0 bg-light-color'>
+      <body className='h-full w-full m-0 bg-gray-100'>
         <motion.div
           variants={variants}
           initial='hidden'

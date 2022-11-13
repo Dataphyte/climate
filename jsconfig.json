@@ -9,7 +9,8 @@
       "@/animations/*": ["./src/assets/animations/*"],
       "@/utils/*": ["src/utils/*"],
       "@/hooks/*": ["./src/hooks/*"],
-      "@/app/*": ["./src/app/*"]
+      "@/app/*": ["./src/app/*"],
+      "@/query-hooks/*": ["./src/hooks/query-hooks/*"]
     }
   }
 }

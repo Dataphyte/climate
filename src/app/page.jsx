@@ -2,6 +2,7 @@ import React from 'react';
 import HomeHero from './hero';
 import HomeSwiper from '@/components/HomeSwiper';
 import { classNames } from '@/utils/classNames';
+import Footer from '@/components/footer';
 
 const cardData = [
   {
@@ -157,6 +158,8 @@ const Page = () => {
           ></iframe>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

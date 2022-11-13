@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       {/* ======= SIDE MENU */}
       <aside
         className={classNames(
-          'col-span-4 lg:col-span-1 w-full bg-main-color text-gray-50 duration-300 ease-out relative py-10 px-2 lg:px-5 flex-col gap-3 font-secondary font-light',
+          'col-span-5 lg:col-span-1 w-full bg-dark-2 hover:border-gray-600 text-gray-50 duration-300 ease-out relative py-10 px-10 md:px-16 lg:px-5 flex-col gap-3 font-secondary font-light',
           openSide ? 'flex' : 'hidden'
         )}
       >
@@ -52,9 +52,9 @@ const Layout = ({ children }) => {
 
         <Link
           href='/'
-          className='w-full rounded py-2 shadow-md border border-gray-50 flex items-center justify-center mt-20'
+          className='w-full rounded py-2 shadow-md border border-gray-50 flex items-center justify-center mt-20 hover:bg-rose-400 duration-150'
         >
-          Back Home
+          Exit
         </Link>
       </aside>
 
@@ -65,7 +65,7 @@ const Layout = ({ children }) => {
         className={
           openSide
             ? 'hidden'
-            : 'absolute top-1 py-1 px-4 z-10 bg-indigo-500 text-white rounded-md shadow-lg flex items-center justify-center gap-1 text-sm'
+            : 'absolute top-2 py-1 px-4 z-10 bg-indigo-500 text-white rounded-md shadow-lg flex items-center justify-center gap-1 text-sm left-10'
         }
         onClick={() => setOpenSide((state) => !state)}
       >
@@ -79,12 +79,12 @@ const Layout = ({ children }) => {
       <main
         className={classNames(
           'h-full w-full',
-          openSide ? 'col-span-1 lg:col-span-4' : 'col-span-5'
+          openSide ? 'hidden lg:col-span-4' : 'col-span-5'
         )}
       >
         <div className='hidden lg:block'> {children}</div>
 
-        <div className='bg-rose-500 flex lg:hidden w-full h-full items-center justify-center flex-col gap-5'>
+        <div className='bg-main-color flex lg:hidden w-full h-full items-center justify-center flex-col gap-5'>
           <Lottie
             options={{
               autoplay: true,
@@ -96,7 +96,12 @@ const Layout = ({ children }) => {
           <p className='text-3xl font-bold text-gray-100 text-center w-3/4'>
             Screen size too small to show Sandbox
           </p>
-          <Link href='/'> Back to home</Link>
+          <Link
+            href='/'
+            className='py-2 px-6 rounded-lg shadow-lg border border-gray-200 text-gray-200'
+          >
+            Back to home
+          </Link>
         </div>
       </main>
     </div>
