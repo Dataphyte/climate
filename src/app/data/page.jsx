@@ -6,7 +6,7 @@ import { classNames } from '@/utils/classNames';
 
 const tableData = [
   { title: 'NIMEC data' },
-  { title: 'Projects assigned by FG' },
+  { title: 'States Climate Change Mitigation Projects' },
 ];
 
 const Page = () => {
@@ -60,7 +60,7 @@ const Page = () => {
                   ></iframe>
                 </div>
               ),
-              'Projects assigned by FG': (
+              'States Climate Change Mitigation Projects': (
                 <div className='table__container'>
                   <iframe
                     title='Flood Control and Climate Change Mitigation Projects by FG and State Governments'

@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import HomeHero from './hero';
 import HomeSwiper from '@/components/HomeSwiper';
 import { classNames } from '@/utils/classNames';
 import Footer from '@/components/footer';
+import useTelemetrics from '@/hooks/sanity-hooks/useTelemetrics';
 
 const cardData = [
   {
@@ -64,6 +67,10 @@ const cardData = [
 ];
 
 const Page = () => {
+  const telemetrics = useTelemetrics();
+
+  console.log(telemetrics);
+
   return (
     <div className='w-full min-h-screen flex gap-5 items-center flex-col bg-gray-100'>
       <HomeHero />
@@ -120,23 +127,26 @@ const Page = () => {
           Flood data as of November, 2022
         </h3>
         <div className='w-full col-span-3  h-full min-h-[150px] flex items-center justify-start py-3 px-2 lg:px-8 gap-5 overflow-hidden'>
-          {cardData.map((item, idx) => (
-            <span
-              key={idx}
-              className='w-[250px] bg-white/20 border border-white/30 h-[120px] py-2 px-5 rounded-lg shadow-lg shrink-0 gap-1 animate-chart-slider-sm lg:animate-chart-slider-lg ease-out select-none flex justify-center flex-col'
-            >
-              <p className=' font-bold text-gray-50'>{item.title}</p>
-              <p className='text-sm font-light text-gray-100/70'>{item.tag}</p>
-              <p
-                className={classNames(
-                  'text-2xl font-black',
-                  item.bad ? 'text-red-400' : 'text-bg-grad-2'
-                )}
+          {telemetrics &&
+            telemetrics.map((item) => (
+              <span
+                key={item._id}
+                className='w-[250px] bg-white/20 border border-white/30 h-[120px] py-3 px-5 rounded-lg shadow-lg shrink-0 gap-1 animate-chart-slider-sm lg:animate-chart-slider-lg ease-out select-none flex justify-between flex-col'
               >
-                {item.value}
-              </p>
-            </span>
-          ))}
+                <p className=' font-bold text-gray-50'>{item.title}</p>
+                <p className='text-sm font-light text-gray-100/70'>
+                  {item.tag}
+                </p>
+                <p
+                  className={classNames(
+                    'text-2xl font-black',
+                    item.people ? 'text-red-400' : 'text-bg-grad-2'
+                  )}
+                >
+                  {item.value}
+                </p>
+              </span>
+            ))}
         </div>
 
         {/* ======= BOTTOM THIRD ROW CHARTS */}

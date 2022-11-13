@@ -27,9 +27,9 @@ const Page = () => {
 
       <main className='w-full flex flex-col items-center gap-2 px-3 md:px-5 lg:px-16 py-24'>
         {/* ====== STATE RESOURCES SECTION */}
-        <section className='w-full flex flex-col gap-3'>
+        <section className='w-full flex flex-col gap-5'>
           <h2 className='text-3xl font-medium text-gray-800'>
-            Resources by state
+            Flood resources by state
           </h2>
 
           <span className='grid grid-cols-3 gap-5 justify-items-center'>

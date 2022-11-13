@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { client } from '@/utils/sanity-client';
 
 // ======= Define query -->
-const query = '*[_type == "resources-state"]';
+const query = '*[_type == "telemetrics"]{ _id, title, tag, value, people }';
 
-const useResources = async () => {
+const useTelemetrics = () => {
   const [result, setResult] = useState(null);
 
   useEffect(() => {
@@ -16,4 +16,4 @@ const useResources = async () => {
   return result;
 };
 
-export default useResources;
+export default useTelemetrics;
