@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
 
 const Error = ({ error, reset }) => {
   useEffect(() => {
@@ -13,12 +14,14 @@ const Error = ({ error, reset }) => {
       <p className='font-primary text-2xl font-secondary text-gray-200/80 italic'>
         Something went Wrong...
       </p>
-      <button
-        onClick={() => reset()}
-        className='py-1 px-6 rounded-md shadow-lg mt-8 border border-gray-50 text-gray-50'
-      >
-        Click to reset
-      </button>
+      <Link href='/'>
+        <button
+          onClick={() => reset()}
+          className='py-1 px-6 rounded-md shadow-lg mt-8 border border-gray-50 text-gray-50'
+        >
+          Click to reset
+        </button>
+      </Link>
     </div>
   );
 };

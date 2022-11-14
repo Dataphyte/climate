@@ -3,6 +3,7 @@ import { PaperClipIcon } from '@heroicons/react/20/solid';
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { MapIcon, ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const ResourceDetail = ({ state, setState, stateObject }) => {
   return (
@@ -57,7 +58,7 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                           State
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0'>
-                          Kogi
+                          {stateObject.state}
                         </dd>
                       </div>
 
@@ -67,7 +68,7 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                           Number of LGAs
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0'>
-                          9
+                          {stateObject.no_of_lga}
                         </dd>
                       </div>
 
@@ -77,14 +78,15 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                           LGA affected
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 flex gap-2'>
-                          {[1, 2, 3, 4].map((lga, index) => (
-                            <p
-                              key={index}
-                              className='w-max bg-blue-100 py-0.5 px-3 rounded-xl shadow text-gray-700'
-                            >
-                              Iddah
-                            </p>
-                          ))}
+                          {stateObject &&
+                            stateObject.lga_affected.map((lga, index) => (
+                              <p
+                                key={index}
+                                className='w-max bg-blue-100 py-0.5 px-3 rounded-xl shadow text-gray-700'
+                              >
+                                {lga}
+                              </p>
+                            ))}
                         </dd>
                       </div>
 
@@ -94,7 +96,7 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                           Number of Deaths
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0'>
-                          334,300
+                          {stateObject.no_of_deaths}
                         </dd>
                       </div>
 
@@ -104,7 +106,7 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                           Number of Injured
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0'>
-                          333
+                          {stateObject.no_of_injured}
                         </dd>
                       </div>
 
@@ -114,7 +116,7 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                           Number of Displaced
                         </dt>
                         <dd className='mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0'>
-                          333,334
+                          {stateObject.no_of_displaced}
                         </dd>
                       </div>
 
@@ -128,33 +130,35 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                             role='list'
                             className='divide-y divide-gray-200 rounded-md border border-gray-200 bg-white'
                           >
-                            {[1, 2, 3].map((link, index) => (
-                              <li
-                                className='flex items-center justify-between py-3 pl-3 pr-4 text-sm'
-                                key={index}
-                              >
-                                <div className='flex w-0 flex-1 items-center'>
-                                  <PaperClipIcon
-                                    className='h-5 w-5 flex-shrink-0 text-gray-400'
-                                    aria-hidden='true'
-                                  />
-                                  <span className='ml-2 w-0 flex-1 truncate'>
-                                    Flood stories title - &nbsp;
-                                    <em className='text-gray-600 text-sm font-light'>
-                                      Source
-                                    </em>
-                                  </span>
-                                </div>
-                                <div className='ml-4 flex-shrink-0'>
-                                  <a
-                                    href='#'
-                                    className='font-medium text-indigo-600 hover:text-indigo-500'
-                                  >
-                                    Visit
-                                  </a>
-                                </div>
-                              </li>
-                            ))}
+                            {stateObject &&
+                              stateObject.ref_link.map((link, index) => (
+                                <li
+                                  className='flex items-center justify-between py-3 pl-3 pr-4 text-sm'
+                                  key={index}
+                                >
+                                  <div className='flex w-0 flex-1 items-center'>
+                                    <PaperClipIcon
+                                      className='h-5 w-5 flex-shrink-0 text-gray-400'
+                                      aria-hidden='true'
+                                    />
+                                    <span className='ml-2 w-0 flex-1 truncate'>
+                                      {link.post_title} - &nbsp;
+                                      <em className='text-gray-600 text-sm font-light'>
+                                        {link.source}
+                                      </em>
+                                    </span>
+                                  </div>
+                                  <div className='ml-4 flex-shrink-0'>
+                                    <Link
+                                      href={link.link}
+                                      className='font-medium text-indigo-600 hover:text-indigo-500'
+                                      target='_blank'
+                                    >
+                                      Visit
+                                    </Link>
+                                  </div>
+                                </li>
+                              ))}
                           </ul>
                         </dd>
                       </div>

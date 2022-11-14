@@ -33,28 +33,29 @@ const Page = () => {
           </h2>
 
           <span className='grid grid-cols-3 gap-5 justify-items-center'>
-            {[1, 2, 3, 4, 5, 6].map((data, index) => (
-              <span
-                key={index}
-                onClick={() => {
-                  setCurrentState(data);
-                  console.log(data);
-                  setInfopad(true);
-                }}
-                className='w-full h-max items-center justify-center flex  col-span-3 lg:col-span-1'
-              >
-                <StateResourceCard data={data} />
-              </span>
-            ))}
+            {resources &&
+              resources.map((data, index) => (
+                <span
+                  key={index}
+                  onClick={() => {
+                    setCurrentState(data);
+                    console.log(data);
+                    setInfopad(true);
+                  }}
+                  className='w-full h-max items-center justify-center flex  col-span-3 lg:col-span-1'
+                >
+                  <StateResourceCard data={data} />
+                </span>
+              ))}
           </span>
         </section>
 
+        {/* ====== STATE RESOURCE POP-UP */}
         <ResourceDetail
           state={infopad}
           setState={setInfopad}
-          stateObject={currentState}
+          stateObject={currentState !== null && currentState}
         />
-        <p className='text-gray-700 mt-10'>Note: Data coming soon...</p>
       </main>
       <Footer />
     </div>
