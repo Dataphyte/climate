@@ -1,70 +1,13 @@
 'use client';
 
-import React, { useEffect } from 'react';
 import HomeHero from './hero';
-import HomeSwiper from '@/components/HomeSwiper';
-import { classNames } from '@/utils/classNames';
+import Lottie from 'react-lottie';
 import Footer from '@/components/footer';
+import React, { useEffect } from 'react';
+import { classNames } from '@/utils/classNames';
+import HomeSwiper from '@/components/HomeSwiper';
 import useTelemetrics from '@/hooks/sanity-hooks/useTelemetrics';
-
-const cardData = [
-  {
-    title: 'Flood effects',
-    tag: 'Persons affected by flood',
-    value: '3,219,780',
-    icon: 'icon',
-    bad: true,
-  },
-  {
-    title: 'Flood Displacements',
-    tag: 'Internally displaced persons',
-    value: '1,427,370',
-    icon: 'icon',
-    bad: true,
-  },
-  {
-    title: 'Flood Injuries',
-    tag: 'Number of persons injured',
-    value: '2,776',
-    icon: 'icon',
-    bad: true,
-  },
-  {
-    title: 'Flood Deaths',
-    tag: 'Number of lives lost to flood',
-    value: '612',
-    icon: 'icon',
-    bad: true,
-  },
-  {
-    title: 'Flood Damages',
-    tag: 'Houses partially damaged',
-    value: '181,600',
-    icon: 'icon',
-    bad: false,
-  },
-  {
-    title: 'Flood Damage',
-    tag: 'Houses totally damaged',
-    value: '123,807',
-    icon: 'icon',
-    bad: true,
-  },
-  {
-    title: 'Agricultural Damage',
-    tag: 'Hectares of farmlands partially damaged',
-    value: '176,852',
-    icon: 'icon',
-    bad: false,
-  },
-  {
-    title: 'Agricultural Damage',
-    tag: 'Hectares of farmlands totally damaged',
-    value: '392,399',
-    icon: 'icon',
-    bad: false,
-  },
-];
+import barChartLottie from '@/animations/bar-charts-lottie.json';
 
 const Page = () => {
   const telemetrics = useTelemetrics();
@@ -102,12 +45,20 @@ const Page = () => {
       {/* ======= ############ */}
       {/* ======= ############ */}
       {/* ======= MAIN CHART SECTION */}
-      <section className='bg-dark-2 w-full min-h-[600px] h-max grid grid-cols-3 gap-3 gap-y-10 px-3 lg:px-24 py-10 lg:py-20'>
-        <h1 className='font-bold text-2xl lg:text-5xl col-span-3 text-gray-200 mb-10 border-l-2 w-max px-3 lg:px-10 rounded-md'>
+      <section className='bg-dark-2 w-full min-h-[600px] h-max grid grid-cols-3 gap-3 gap-y-8 px-3 lg:px-24 py-10 lg:py-20'>
+        <h1 className='font-bold text-xl lg:text-4xl col-span-3 text-gray-200 mb-10 w-max rounded-md flex items-end gap-2'>
+          <Lottie
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData: barChartLottie,
+            }}
+            style={{ width: '50px', height: '50px' }}
+          />
           Climate <b className='text-white'>TRENDS</b> rundown
         </h1>
         {/* ======= CHART 1 */}
-        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max '>
+        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max -mt-5'>
           <iframe
             src='https://flo.uri.sh/visualisation/11715161/embed'
             title='Interactive or visual content'
@@ -117,7 +68,7 @@ const Page = () => {
         </div>
 
         {/* ======= CHART 2 */}
-        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max '>
+        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max -mt-5 '>
           <iframe
             src='https://flo.uri.sh/visualisation/11714968/embed'
             title='Interactive or visual content'
@@ -127,7 +78,7 @@ const Page = () => {
         </div>
 
         {/* ======= CHART 3 */}
-        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max '>
+        <div className='col-span-3 lg:col-span-1 bg-white p-3 rounded-md shadow-md h-max  -mt-5'>
           <iframe
             src='https://flo.uri.sh/visualisation/11715189/embed'
             title='Interactive or visual content'
