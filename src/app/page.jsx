@@ -80,10 +80,22 @@ const Page = () => {
       {/* ======= ############ */}
       {/* ======= ############ */}
       {/* ======= BOTTOM SECTION */}
-      <section className='w-full min-h-[600px] mt-20 lg:mt-16 lg:px-20 xl:px-32 px-3 gap-5 flex flex-col'>
-        <h3 className='font-bold text-3xl text-gray-700'>Quick Charts</h3>
-        <div className='grid grid-cols-5'>
+      <section className='w-full min-h-[600px] mt-20 lg:mt-16 lg:px-20 xl:px-20 px-3 gap-10 grid grid-cols-5 justify-items-center '>
+        {/* ====== SLIDER SECTION */}
+        <div className='flex col-span-5 lg:col-span-2 w-full h-full max-w-[600px]'>
           <HomeSwiper />
+        </div>
+
+        {/* ====== MAP CHART */}
+        <div className='h-[610px] max-w-[600px] w-full lg:mt-16 col-span-5 flex items-center justify-center pt-10 col-sapn-5 lg:col-span-3'>
+          <iframe
+            title='Flood Effect'
+            aria-label='Map'
+            id='datawrapper-chart-1Xeln'
+            src='https://datawrapper.dwcdn.net/1Xeln/1/'
+            style={{ width: '100%', height: '100%' }}
+            data-external='1'
+          ></iframe>
         </div>
       </section>
 

@@ -17,7 +17,7 @@ const HomeSwiper = () => {
       loop
       autoplay
       modules={[Autoplay]}
-      className='bg-white w-full h-[350px]  shadow-lg flex items-center justify-center col-span-5 lg:col-span-2'
+      className='bg-white w-full h-[350px] shadow-lg flex items-center justify-center col-span-5 lg:col-span-2'
     >
       {images.map((item, idx) => (
         <SwiperSlide key={idx} className='w-full h-full relative'>

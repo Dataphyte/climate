@@ -1,64 +1,19 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
+import Image from 'next/image';
 import Hero from '@/components/hero';
 import trimmer from '@/utils/trimmer';
 import Footer from '@/components/footer';
-import Image from 'next/image';
-
-// ======= post data -->
-const posts = [
-  {
-    title: 'Boost your conversion rate',
-    href: '#',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    author: {
-      name: 'Roel Aufderehar',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    title: 'How to use search engine sales',
-    href: '#',
-    category: { name: 'Video', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '4 min',
-    author: {
-      name: 'Brenna Goyette',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-  {
-    title: 'Improve your customer experience',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
-  },
-];
+import useReports from '@/hooks/sanity-hooks/useReports';
 
 const Page = () => {
+  const posts = useReports();
+
+  useEffect(() => {
+    console.log(posts);
+  }, [posts]);
+
   return (
     <div className='w-full min-h-screen'>
       <Hero
@@ -87,43 +42,44 @@ const Page = () => {
               </p>
             </div>
             <div className='mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3'>
-              {posts.map((post) => (
-                <div
-                  key={post.title}
-                  className='flex flex-col overflow-hidden rounded-lg shadow-md group hover:shadow-lg duration-150 ease-out'
-                >
-                  <div className='flex-shrink-0 h-48 w-full relative '>
-                    <Image
-                      className='object-cover shadow'
-                      src={post.imageUrl}
-                      fill
-                      alt=''
-                    />
-                  </div>
-                  <div className='flex flex-1 flex-col justify-between bg-white p-6'>
-                    <div className='flex-1'>
-                      <a href={post.href} className='mt-2 block'>
-                        <p className='text-xl font-semibold text-gray-900 duration-150 ease-out hover:text-main-color'>
-                          {post.title}
-                        </p>
-                        <p className='mt-3 text-base text-gray-500 font-light'>
-                          {trimmer(post.description)}
-                        </p>
-                      </a>
+              {posts &&
+                posts.map((post) => (
+                  <div
+                    key={post.title}
+                    className='flex flex-col overflow-hidden rounded-lg shadow-md group hover:shadow-lg duration-150 ease-out'
+                  >
+                    <div className='flex-shrink-0 h-48 w-full relative '>
+                      <Image
+                        className='object-cover shadow'
+                        src={post.imageUrl}
+                        fill
+                        alt=''
+                      />
                     </div>
-                    <div className='mt-6 flex items-center'>
-                      <div className='ml-3'>
-                        <p className='text-sm font-medium text-gray-900'>
-                          {post.author.name}
-                        </p>
-                        <div className='flex space-x-1 text-sm text-gray-500'>
-                          <time dateTime={post.datetime}>{post.date}</time>
+                    <div className='flex flex-1 flex-col justify-between bg-white p-6'>
+                      <div className='flex-1'>
+                        <a href={post.href} className='mt-2 block'>
+                          <p className='text-xl font-semibold text-gray-900 duration-150 ease-out hover:text-main-color'>
+                            {post.title}
+                          </p>
+                          <p className='mt-3 text-base text-gray-500 font-light'>
+                            {trimmer(post.description)}
+                          </p>
+                        </a>
+                      </div>
+                      <div className='mt-6 flex items-center'>
+                        <div className='ml-3'>
+                          <p className='text-sm font-medium text-gray-900'>
+                            {post.author}
+                          </p>
+                          <div className='flex space-x-1 text-sm text-gray-500'>
+                            <time>{post.publish_date}</time>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['i0.wp.com', 'images.unsplash.com'],
+    domains: ['i0.wp.com', 'images.unsplash.com', 'cdn.sanity.io'],
   },
 };
 
