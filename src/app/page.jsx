@@ -46,7 +46,7 @@ const Page = () => {
       {/* ======= ############ */}
       {/* ======= MAIN CHART SECTION */}
       <section className='bg-dark-2 w-full min-h-[600px] h-max grid grid-cols-3 gap-3 gap-y-8 px-3 lg:px-24 py-10 lg:py-20'>
-        <h1 className='font-bold text-xl lg:text-4xl col-span-3 text-gray-200 mb-10 w-max rounded-md flex items-end gap-2'>
+        <h1 className='font-bold text-2xl lg:text-4xl col-span-3 text-gray-200 mb-10 w-max rounded-md flex items-end gap-2'>
           <Lottie
             options={{
               loop: true,

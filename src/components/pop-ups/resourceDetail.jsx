@@ -77,7 +77,7 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                         <dt className='text-sm font-medium text-gray-500'>
                           LGA affected
                         </dt>
-                        <dd className='mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 flex gap-2'>
+                        <dd className='mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 flex gap-2 flex-wrap'>
                           {stateObject &&
                             stateObject.lga_affected.map((lga, index) => (
                               <p
@@ -141,7 +141,7 @@ const ResourceDetail = ({ state, setState, stateObject }) => {
                                       className='h-5 w-5 flex-shrink-0 text-gray-400'
                                       aria-hidden='true'
                                     />
-                                    <span className='ml-2 w-0 flex-1 truncate'>
+                                    <span className='ml-2 w-0 flex-1'>
                                       {link.post_title} - &nbsp;
                                       <em className='text-gray-600 text-sm font-light'>
                                         {link.source}
