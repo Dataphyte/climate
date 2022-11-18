@@ -179,6 +179,7 @@ const Page = () => {
                       'bg-gray-400 w-full h-full col-sapn-1',
                       item === 1 && 'bg-red-400'
                     )}
+                    key={item}
                   />
                 ))}
               </span>
