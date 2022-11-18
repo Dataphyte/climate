@@ -147,8 +147,8 @@ const Page = () => {
 
           <span className='w-3/4 text-center lg:w-1/2  flex items-center justify-center'>
             <p className='text-lg text-gray-700 '>
-              Nigeria's particulate matter is <b>6.8</b> times higher than the
-              WHO annual air guidline value of <b>PM2.5</b>
+              Nigeria&apos;s particulate matter is <b>6.8</b> times higher than
+              the WHO annual air guidline value of <b>PM2.5</b>
             </p>
           </span>
         </div>
