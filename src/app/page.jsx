@@ -6,6 +6,8 @@ import Footer from '@/components/footer';
 import React, { useEffect } from 'react';
 import { classNames } from '@/utils/classNames';
 import HomeSwiper from '@/components/HomeSwiper';
+import Image from 'next/image';
+import FloodSvg from '../assets/svg/Flood-01.svg';
 import useTelemetrics from '@/hooks/sanity-hooks/useTelemetrics';
 import barChartLottie from '@/animations/bar-charts-lottie.json';
 
@@ -131,6 +133,65 @@ const Page = () => {
             style={{ height: '300px', width: '100%' }}
             sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'
           ></iframe>
+        </div>
+      </section>
+
+      {/* ======= ############ */}
+      {/* ======= ############ */}
+      {/* ====== GRAPHICAL SECTION */}
+      <section className='w-full h-auto flex flex-col lg:flex-row items-center justify-center lg:py-10 gap-10'>
+        <div className='flex flex-col lg:flex-row w-full max-w-2xl items-center justify-center md:min-h-[400px] px-5 gap-6'>
+          <div className='w-full lg:w1/2 h-[250px] lg:h-[400px] relative'>
+            <Image src={FloodSvg} fill />
+          </div>
+
+          <span className='w-3/4 text-center lg:w-1/2  flex items-center justify-center'>
+            <p className='text-lg text-gray-700 '>
+              Nigeria's particulate matter is <b>6.8</b> times higher than the
+              WHO annual air guidline value of <b>PM2.5</b>
+            </p>
+          </span>
+        </div>
+
+        <div className='flex flex-col w-full max-w-xl bg-white h-[700px] md:h-[350px] shadow-xl rounded-lg p-4 font-secondary text-lg justify-center gap-4'>
+          <h3 className='text-gray-700 text-center md:text-left'>
+            Nigerias Gloabl Adaptation for <br />
+            Climate Disruption 2020
+          </h3>
+
+          {/* ====== text area */}
+          <div className='h-max md:h-4/5 w-full flex flex-col md:flex-row gap-3 items-center justify-center'>
+            <div className='h-full w-full md:w-1/2 text-center text-gray-700 font-primary'>
+              <p>
+                ND-GAIN <br />
+                Country Index Rank
+              </p>
+              <p className='text-7xl font-black'>158</p>
+              <p className='text-4xl font-black'>/182</p>
+            </div>
+
+            {/* ====== boxes area */}
+            <div className='flex flex-col w-[90%] itens-center justify-center md:w-1/2 items-center h-72 md:h-full gap-4 relative'>
+              <span className='w-full grid grid-cols-2 h-full gap-2 rounded-lg overflow-hidden justify-items-center'>
+                {[1, 2, 3, 4].map((item) => (
+                  <div
+                    className={classNames(
+                      'bg-gray-400 w-full h-full col-sapn-1',
+                      item === 1 && 'bg-red-400'
+                    )}
+                  />
+                ))}
+              </span>
+
+              <p className='text-sm absolute -left-14 top-24 -rotate-90 h-max w-max'>
+                Vunerability {'->'}
+              </p>
+              <p className='text-sm -mt-3 h-max w-max'>Readiness {'->'}</p>
+              <p className='text-2xl text-gray-700'>
+                Vulnerablility. <b className='text-gray-800'>0.500</b>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
