@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Hero from '@/components/hero';
 import trimmer from '@/utils/trimmer';
+import React, { useEffect } from 'react';
 import Footer from '@/components/footer';
 import useReports from '@/hooks/sanity-hooks/useReports';
 
@@ -53,19 +54,24 @@ const Page = () => {
                         className='object-cover shadow'
                         src={post.imageUrl}
                         fill
-                        alt=''
+                        sizes='(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw'
+                        alt={post.title}
                       />
                     </div>
                     <div className='flex flex-1 flex-col justify-between bg-white p-6'>
                       <div className='flex-1'>
-                        <a href={post.href} className='mt-2 block'>
+                        <Link
+                          href={post.link}
+                          className='mt-2 block'
+                          target='_blank'
+                        >
                           <p className='text-xl font-semibold text-gray-900 duration-150 ease-out hover:text-main-color'>
                             {post.title}
                           </p>
                           <p className='mt-3 text-base text-gray-500 font-light'>
                             {trimmer(post.description)}
                           </p>
-                        </a>
+                        </Link>
                       </div>
                       <div className='mt-6 flex items-center'>
                         <div className='ml-3'>

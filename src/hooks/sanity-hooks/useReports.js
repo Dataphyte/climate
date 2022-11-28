@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { client } from '@/utils/sanity-client';
 
 const query =
-  '*[_type == "reports"]{author, description, "imageUrl": image.asset -> url, title, publish_date}';
+  '*[_type == "reports"] | order(publish_date desc) {author, description, "imageUrl": image.asset -> url, title, publish_date, link}';
 
 const useReports = () => {
   const [result, setResult] = useState(null);

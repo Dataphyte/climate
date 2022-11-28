@@ -155,7 +155,7 @@ const Page = () => {
 
         <div className='flex flex-col w-full max-w-xl bg-white h-[700px] md:h-[350px] shadow-xl rounded-lg p-4 font-secondary text-lg justify-center gap-4'>
           <h3 className='text-gray-700 text-center md:text-left'>
-            Nigerias Gloabl Adaptation for <br />
+            Nigerias Global Adaptation for <br />
             Climate Disruption 2020
           </h3>
 
@@ -189,7 +189,7 @@ const Page = () => {
               </p>
               <p className='text-sm -mt-3 h-max w-max'>Readiness {'->'}</p>
               <p className='text-2xl text-gray-700'>
-                Vulnerablility. <b className='text-gray-800'>0.500</b>
+                Vunerability. <b className='text-gray-800'>0.500</b>
               </p>
             </div>
           </div>
